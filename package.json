@@ -1,0 +1,25 @@
+{
+  "name": "browser-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch",
+    "headless-test": "nightwatch --env headless"
+  },
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/chenseanxy/browser-automation.git"
+  },
+  "author": "chenseanxy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenseanxy/browser-automation/issues"
+  },
+  "homepage": "https://github.com/chenseanxy/browser-automation#readme",
+  "devDependencies": {
+    "chromedriver": "^83.0.1",
+    "dotenv": "^8.2.0",
+    "nightwatch": "^1.3.6"
+  }
+}
