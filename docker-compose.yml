@@ -1,0 +1,23 @@
+version: "3"
+services:
+  ofelia:
+    image: mcuadros/ofelia:latest
+    restart: always
+    command: daemon --docker
+    depends_on: 
+      - nightwatch
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels: 
+      ofelia.job-run.nightwatch.container: "nightwatch_ofelia"
+      ofelia.job-run.nightwatch.schedule: "0 0 0 * * *"  # Set your Cron expression here     
+
+  nightwatch:
+    build: .
+    # OR use pre-built image:
+    # image: chenseanxy/browser-automation
+    container_name: "nightwatch_ofelia"
+    restart: "no"
+    volumes:
+      - ./tests_output:/usr/src/app/tests_output
+      - ./screens:/usr/src/app/screens
